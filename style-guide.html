@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WP Brand Guideline</title>
+  <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Graduate|Oregano" rel="stylesheet">
+  <style>
+    <?php
+      // This PHP code inserts CSS to style the "current page" link in the nav area
+      $here = $_SERVER['SCRIPT_NAME']; 
+      $bits = explode('/',$here); 
+      $filename = $bits[count($bits)-1]; 
+      echo "nav a[href$='$filename'] {
+      box-shadow: 1px 1px 1px 2px navy;
+    }";
+    ?>
+    
+  </style>
+  <style>
+    /* This is an example of an embedded style sheet. You do not need to move these styles to an external stylesheet, only the styles you write for your  assignment. */
+    
+    body {
+      margin: 0px 30px;
+    }
+    section {
+      border-top: 4px ridge #CCC;
+      padding: 0px 0px 10px 10px;
+    }
+    /* This styles each color box in the palette */
+    #palette span {
+      display:inline-block;
+      height:50px;
+      width:50px;
+      box-shadow: 1px 1px 2px 1px #333;
+      margin: 5px;
+    }
+    #palette p * {
+      vertical-align: middle;
+    }
+    
+    /* The palette colors. */
+    .black { background-color: black; }
+    .white { background-color: #FFF; }
+    .green { background-color: hsl(120,50%,20%); }
+    
+    /* Background Images */
+    #imagery {
+    }
+    #imagery img {
+      box-shadow: 1px 1px 2px 1px #333;
+      margin: 5px;
+      height: 100px;
+      vertical-align: top;
+    }
+    #imagery img:hover {
+      height:initial;
+    }
+    
+    #fontset h1,
+    #fontset h2,
+    #fontset h3
+    {
+      font-family: 'Fontdiner Swanky', arial, sans-serif;
+    }
+    #fontset h1 {
+      font-size: 4em;
+    }
+    #fontset h2 {
+      font-size: 3.3em;
+    }
+    #fontset h3 {
+      font-size: 2.5em;
+    }
+
+    #fontset .nav
+    {
+      font-family: Graduate, cursive;
+      font-size: 1.7em;
+    }
+    #fontset .main
+    {
+      font-family: Oregano, sans-serif;
+      font-size: 1.5em;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Style Guide</h1>
+    <p><strong>Authors:</strong> Alice Lidell s1234567 and Bob d'Builder s1234568</p>
+  </header>
+  <main>
+
+    <section>
+      <h2>1. Color Palette</h2>
+      <p>Put your color choices here. To get you started, black, white and a green shade have been provided.</p>
+      <p>As a guide, you should have at least 2 - 3 hues and 2 - 3 shades of each hue. More colors can be added to the stylesheet, look for "#palette" in the CSS code.</p>
+
+      <div id='palette'>
+        <p><span class='black'></span> Explain what elements will use this color</p>
+        <p><span class='white'></span> Explain what elements will use this color</p>
+        <p><span class='green'></span> Explain what elements will use this color</p>
+      </div>
+      <p>Explain what each color will be used for, for example</p>
+      <ul>
+        <li>The main element could have a white background and black text</li>
+        <li>The navigation element could have a green background and white text</li>
+      </ul>
+      <p>Meeting Web Content Accessibility Guidelines is important, check that you colors have good contrast and score an AAA WGAG rating at <a href='http://leaverou.github.io/contrast-ratio'>http://leaverou.github.io/contrast-ratio</a>.</p>
+    </section>
+    
+    <section>
+      <h2>2. Images and Background Images</h2>
+      <p>Website paragraph text should be mixed with images and the overall look of a website can be enhanced with background images, be they full size images or smaller "tiling" images. Update the links of these sample images once you have uploaded images to your img directory.</p>
+      <div id='imagery'>
+        <img src='../img/bg-1.png' alt='put your description here'>
+        <img src='../img/bg-2.png' alt='put your description here'>
+        <img src='../img/bg-3.png' alt='put your description here'>
+      </div>
+    </section>
+    
+    <section>
+      <h2>3. Fonts</h2>
+      <p>Use webfonts (eg Google Fonts) or the font-face rule to import fonts into your pages rather than using generic fonts such as Arial and Times-New-Roman.</p>
+      <p>Ideally the headings should be more "fancy" whereas blocks of paragraph text should be more "readable". Headings should ALWAYS be bigger than the main text.</p>
+      <div id='fontset'>
+        <h1>H1: name font family and size here.</h1>
+        <h2>H2: name font family and size here.</h2>
+        <h3>H3: name font family and size here.</h3>
+        <p class='nav'>Nav links: name font family and size here.</p>
+        <p class='main'>Main text: ABCDE abcde 0-9, name font family and size here.</p>
+      </div>
+    </section>
+    
+    <section>
+      <h2>4. Link Styling</h2>
+      <p>Links in the nav, main and footer should be styled differently using the <strong>L</strong>o<strong>V</strong>e <strong>HA</strong>te rule. For example</p>
+      <pre>nav a { 
+  /* styles that affect all nav links go here */
+}
+nav a:link, 
+nav a:visited { 
+  /* styles that affect just the "non-interacted" nav links go here */
+}
+nav a:hover, 
+nav a:active { 
+  /* styles that affect "interacted" nav links go here */
+}</pre>
+
+      <p>There is no <code>:current-page-link</code> pseudo state, but if you look near the top of the page, you will see that there is some PHP code that inserts CSS style to style nav links that have the same name as the current page. <strong>NB: This won't work until the extension of this file is changed to .php</strong> Replace the existing CSS with your chosen styles and provide an example of the "current page" nav link style too.</p>
+      <p>Provide working examples of how links in each area will be styled below. These links must respond to user mouse movements:</p>
+
+      <h3>Nav Link Styling</h3>
+      <p>Put your working examples here</p>
+      <h3>Main Link Styling</h3>
+      <p>Put your working examples here</p>
+      <h3>Footer Link Styling</h3>
+      <p>Put your working examples here</p>
+
+    </section>
+  </main>
+</body>
+</html>
