@@ -13,7 +13,7 @@
   <body>
 
     <header>
-      <div>Put company logo and name here - test mod</div>
+      <div>Put company logo and name here</div>
     </header>
 
     <nav>
